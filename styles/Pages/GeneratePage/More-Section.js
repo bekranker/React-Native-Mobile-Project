@@ -1,0 +1,73 @@
+import { StyleSheet } from "react-native";
+export const AllStyle = StyleSheet.create({
+  container: {
+    backgroundColor: "#262626",
+    width: 430,
+    height: 580,
+    borderRadius: 10,
+    display: "flex",
+    alignContent: "center",
+    alignItems: "center",
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 0 },
+    shadowRadius: 2,
+    shadowOpacity: 0.4,
+    position: "absolute",
+    zIndex: 3,
+    top: -60,
+  },
+  backButton: {
+    backgroundColor: "#444444",
+    width: 24,
+    height: 24,
+    borderRadius: 40,
+  },
+  items: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 6,
+    paddingTop: 6,
+  },
+  itemsGenreScrolls: {
+    width: "100%",
+    marginTop: 16,
+    marginBottom: 24,
+  },
+  itemsHeaders: {
+    fontSize: 25,
+    fontWeight: "800",
+    color: "#ffffff",
+  },
+  genreItemsParent: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  genreButtonParent: {
+    display: "flex",
+
+    flexDirection: "row",
+    paddingVertical: 16,
+    marginLeft: 6,
+  },
+  genreButton: {
+    marginRight: 16,
+    backgroundColor: "#444444",
+    width: "64",
+    height: "32",
+    paddingHorizontal: 18,
+    paddingVertical: 9,
+    borderRadius: 20,
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
+  },
+  genreButtonText: {
+    color: "#ffffff",
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "400",
+  },
+});
