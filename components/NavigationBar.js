@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Image } from "react-native";
 
-import { NavBarStyle } from "../styles/MusicPanel";
+import { NavBarStyle } from "../styles/Pages/Music/MusicPanel";
 import GenerateIcon from "../styles/Navigation_Bar_Icons/Generate_Icon.png";
 import HomeIcon from "../styles/Navigation_Bar_Icons/Home_Icon.png";
 import LibraryIcon from "../styles/Navigation_Bar_Icons/Library_Icon.png";
