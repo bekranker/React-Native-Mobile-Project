@@ -1,18 +1,16 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-  TextInput,
-  Image,
-} from "react-native";
+import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
 
-import BigCurrentListening from "../../styles/Pages/Music/BigCurrentListening";
+import { ListenStyle } from "../../styles/Pages/Music/BigCurrentListening";
+import musicLabelBg from "../../styles/pp.jpeg";
 
 export const Listen = () => {
-  return;
-  <SafeAreaView>
-    <View style={BigCurrentListening.bgContainer}></View>
-  </SafeAreaView>;
+  return (
+    <>
+      <Image
+        source={musicLabelBg}
+        style={ListenStyle.BackgrounCoverImage}
+      ></Image>
+      <View style={ListenStyle.Container}></View>
+    </>
+  );
 };

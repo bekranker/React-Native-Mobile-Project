@@ -26,6 +26,7 @@ export const MusicPanel = () => {
           <Text style={CurrentListeningStyle.songBy}>by Bekir</Text>
         </View>
         <TouchableOpacity
+          style={CurrentListeningStyle.playButton}
           onPress={() => {
             setButtonImage(() => {
               return buttonImage === pause ? Playbutton : pause;

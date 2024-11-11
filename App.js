@@ -14,16 +14,19 @@ import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
   return (
-    <LinearGradient
-      colors={["#1A1A1A", "#0B0B0B"]}
-      style={Style.background_gradient}
-    >
-      <MusicPanel></MusicPanel>
+    <>
+      <LinearGradient
+        colors={["#1A1A1A", "#0B0B0B"]}
+        style={Style.background_gradient}
+      >
+        <MusicPanel></MusicPanel>
+        <Listen></Listen>
+        <SafeAreaView>
+          <GeneratePage></GeneratePage>
+        </SafeAreaView>
+      </LinearGradient>
       <NavigationBar></NavigationBar>
-      <Listen></Listen>
-      <SafeAreaView>
-        <GeneratePage></GeneratePage>
-      </SafeAreaView>
-    </LinearGradient>
+      <Listen />
+    </>
   );
 }

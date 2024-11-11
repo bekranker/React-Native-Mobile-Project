@@ -36,7 +36,10 @@ export const CurrentListeningStyle = StyleSheet.create({
     marginRight: 16,
     width: 20,
     height: 20,
-    backgroundColor: "black",
+  },
+  playButton: {
+    width: 20,
+    height: 20,
   },
   pp: {
     width: 48,
