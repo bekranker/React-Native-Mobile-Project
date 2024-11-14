@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native";
-
+import { useState } from "react";
 /* This Field is for Components */
 import GeneratePage from "./components/Generate-Page/Generate";
 import NavigationBar from "./components/NavigationBar";
@@ -13,20 +13,21 @@ import { Style } from "./styles/Pages/GeneratePage/GenerateStyle";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
+  const [close, setClose] = useState(false);
+
   return (
     <>
+      <Listen closeHook={setClose} closeHookVariable={close} />
       <LinearGradient
         colors={["#1A1A1A", "#0B0B0B"]}
         style={Style.background_gradient}
       >
-        <MusicPanel></MusicPanel>
-        <Listen></Listen>
+        <MusicPanel setCloseHook={setClose}></MusicPanel>
         <SafeAreaView>
           <GeneratePage></GeneratePage>
         </SafeAreaView>
+        <NavigationBar></NavigationBar>
       </LinearGradient>
-      <NavigationBar></NavigationBar>
-      <Listen />
     </>
   );
 }

@@ -14,12 +14,17 @@ import pause from "../../styles/pause.jpg";
 import { Listen } from "./Listen";
 import { useState } from "react";
 
-export const MusicPanel = () => {
+export const MusicPanel = ({ setCloseHook }) => {
   const [buttonImage, setButtonImage] = useState(Playbutton);
 
   return (
     <>
-      <View style={CurrentListeningStyle.PanelContainer}>
+      <TouchableOpacity
+        style={CurrentListeningStyle.PanelContainer}
+        onPress={() => {
+          setCloseHook(true);
+        }}
+      >
         <Image source={Tarkan} style={CurrentListeningStyle.pp}></Image>
         <View style={CurrentListeningStyle.PanelItem}>
           <Text style={CurrentListeningStyle.songName}>Love Song</Text>
@@ -38,7 +43,7 @@ export const MusicPanel = () => {
             style={CurrentListeningStyle.playIcon}
           ></Image>
         </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
     </>
   );
 };
