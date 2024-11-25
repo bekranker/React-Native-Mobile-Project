@@ -16,14 +16,14 @@ import {
   UpperSide,
 } from "../../styles/Pages/Music/BigCurrentListening";
 import { LinearGradient } from "expo-linear-gradient";
-import musicLabelBg from "../../styles/popBG.jpeg";
-import AlbumPP from "../../styles/pp.jpeg";
-import hearth from "../../styles/Pages/Heart.png";
-import previousButton from "../../styles/Previous.png";
-import nextButton from "../../styles/Next.png";
-import PlayButton from "../../styles/playBlack.png";
-import stopButton from "../../styles/pauseBlack.png";
-import closeButton from "../../styles/closeWhite.png";
+import musicLabelBg from "../../Assets/Listening Page/Backgrounds/popBG.jpeg";
+import AlbumPP from "../../Assets/pp.jpeg";
+import hearth from "../../Assets/Listening Page/Heart.png";
+import previousButton from "../../Assets/Listening Page/Previous.png";
+import nextButton from "../../Assets/Listening Page/Next.png";
+import PlayButton from "../../Assets/Listening Page/Playbutton.png";
+import stopButton from "../../Assets/Listening Page/Stop.png";
+import closeButton from "../../Assets/closeWhite.png";
 export const Listen = ({ closeHook, closeHookVariable }) => {
   //zoom animation
   const scaleAnim = useRef(new Animated.Value(1)).current;

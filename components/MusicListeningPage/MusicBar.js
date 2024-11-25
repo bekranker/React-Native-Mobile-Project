@@ -8,10 +8,9 @@ import {
   Image,
 } from "react-native";
 import { CurrentListeningStyle } from "../../styles/Pages/Music/CurrentListening";
-import Tarkan from "../../styles/pp.jpeg";
-import Playbutton from "../../styles/Playbutton.png";
-import pause from "../../styles/pause.jpg";
-import { Listen } from "./Listen";
+import Tarkan from "../../Assets/pp.jpeg";
+import Playbutton from "../../Assets/Listening Page/Playbutton.png";
+import pause from "../../Assets/Listening Page/pause.jpg";
 import { useState } from "react";
 
 export const MusicPanel = ({ setCloseHook }) => {

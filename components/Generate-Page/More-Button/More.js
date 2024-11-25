@@ -30,20 +30,13 @@ const genres = [
 
 //instruments
 const instruments = [
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
-  "loremipsum",
+  "drum",
+  "guitar",
+  "electro guitar",
+  "piano",
+  "saxaphone",
+  "trumpet",
+  "violin",
 ];
 
 export const PanelOpen = () => {
