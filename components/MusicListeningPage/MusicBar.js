@@ -10,7 +10,7 @@ import {
 import { CurrentListeningStyle } from "../../styles/Pages/Music/CurrentListening";
 import Tarkan from "../../Assets/pp.jpeg";
 import Playbutton from "../../Assets/Listening Page/Playbutton.png";
-import pause from "../../Assets/Listening Page/pause.jpg";
+import pause from "../../Assets/Listening Page/pause.png";
 import { useState } from "react";
 
 export const MusicPanel = ({ setCloseHook }) => {

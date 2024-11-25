@@ -21,8 +21,8 @@ import AlbumPP from "../../Assets/pp.jpeg";
 import hearth from "../../Assets/Listening Page/Heart.png";
 import previousButton from "../../Assets/Listening Page/Previous.png";
 import nextButton from "../../Assets/Listening Page/Next.png";
-import PlayButton from "../../Assets/Listening Page/Playbutton.png";
-import stopButton from "../../Assets/Listening Page/Stop.png";
+import PlayButton from "../../Assets/Listening Page/playBlack.png";
+import stopButton from "../../Assets/Listening Page/pauseBlack.png";
 import closeButton from "../../Assets/closeWhite.png";
 export const Listen = ({ closeHook, closeHookVariable }) => {
   //zoom animation
