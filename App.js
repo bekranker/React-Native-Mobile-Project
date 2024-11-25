@@ -8,7 +8,6 @@ import { MusicPanel } from "./components/MusicListeningPage/MusicBar";
 import { Listen } from "./components/MusicListeningPage/Listen";
 /* This Field is for Stylies */
 import { Style } from "./styles/Pages/GeneratePage/GenerateStyle";
-
 /* This Field is for Extra Libraries */
 import { LinearGradient } from "expo-linear-gradient";
 
