@@ -13,8 +13,8 @@ import Playbutton from "../../Assets/Listening Page/Playbutton.png";
 import pause from "../../Assets/Listening Page/pause.png";
 import { useState } from "react";
 
-export const MusicPanel = ({ setCloseHook }) => {
-  const [buttonImage, setButtonImage] = useState(Playbutton);
+export const MusicPanel = ({ setCloseHook, setListening, listening }) => {
+
 
   return (
     <>
@@ -32,13 +32,12 @@ export const MusicPanel = ({ setCloseHook }) => {
         <TouchableOpacity
           style={CurrentListeningStyle.playButton}
           onPress={() => {
-            setButtonImage(() => {
-              return buttonImage === pause ? Playbutton : pause;
-            });
+            setListening(!listening);
+            console.log(`istening from Generate Page is: ${listening}`);
           }}
         >
           <Image
-            source={buttonImage}
+            source={(listening ? pause : Playbutton)}
             style={CurrentListeningStyle.playIcon}
           ></Image>
         </TouchableOpacity>
@@ -46,6 +45,4 @@ export const MusicPanel = ({ setCloseHook }) => {
     </>
   );
 };
-export const OpenMusicPanel = () => {
-  return <>{}</>;
-};
+

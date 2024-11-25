@@ -14,15 +14,15 @@ import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
   const [close, setClose] = useState(false);
-
+  const [listening, setListening] = useState(false);
   return (
     <>
-      <Listen closeHook={setClose} closeHookVariable={close} />
+      <Listen closeHook={setClose} closeHookVariable={close} listening={listening} setListening={setListening} />
       <LinearGradient
         colors={["#1A1A1A", "#0B0B0B"]}
         style={Style.background_gradient}
       >
-        <MusicPanel setCloseHook={setClose}></MusicPanel>
+        <MusicPanel setCloseHook={setClose} setListening={setListening} listening={listening}></MusicPanel>
         <SafeAreaView>
           <GeneratePage></GeneratePage>
         </SafeAreaView>

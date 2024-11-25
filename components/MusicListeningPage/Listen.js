@@ -24,7 +24,7 @@ import nextButton from "../../Assets/Listening Page/Next.png";
 import PlayButton from "../../Assets/Listening Page/playBlack.png";
 import stopButton from "../../Assets/Listening Page/pauseBlack.png";
 import closeButton from "../../Assets/closeWhite.png";
-export const Listen = ({ closeHook, closeHookVariable }) => {
+export const Listen = ({ closeHook, closeHookVariable, listening, setListening }) => {
   //zoom animation
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const [paused, setPaused] = useState(false);
@@ -174,11 +174,12 @@ export const Listen = ({ closeHook, closeHookVariable }) => {
                     <TouchableOpacity
                       style={Bottom_Bottom_Side.Play_Pause_Button}
                       onPress={() => {
-                        setPaused(!paused);
+                        setListening(!listening);
+                        console.log(listening);
                       }}
                     >
                       <Image
-                        source={paused ? stopButton : PlayButton}
+                        source={listening ? stopButton : PlayButton}
                         style={Bottom_Bottom_Side.Play_Pause_Button_Icon}
                       />
                     </TouchableOpacity>
