@@ -26,22 +26,46 @@ export default function NavigationBar() {
   return (
     <View style={NavBarStyle.backgroundContainer}>
       <TouchableOpacity onPress={()=>{
-        setIcons(icons.Home === HomeIcon ? {Home: Pressed_Home} : {Home: HomeIcon});}}>
+        setIcons({
+          Home: Pressed_Home,
+          Library: LibraryIcon,
+          Search: SearchIcon,
+          Generate: GenerateIcon
+          }); 
+        }}>
         <Image
           source={icons.Home}
           style={[NavBarStyle.icon, { marginLeft: 40 }]}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={()=>{
-        setIcons(icons.Search === SearchIcon ? {Search: Pressed_Search} : {Search: SearchIcon});}}>
+        setIcons({
+          Home: HomeIcon,
+          Library: LibraryIcon,
+          Search: Pressed_Search,
+          Generate: GenerateIcon
+          });
+        }}>
         <Image source={icons.Search} style={NavBarStyle.icon} />
       </TouchableOpacity>
       <TouchableOpacity onPress={()=>{
-        setIcons(icons.Generate === GenerateIcon ? {Generate: Pressed_Gen} : {Generate: GenerateIcon});}}>
+        setIcons({
+          Home: HomeIcon,
+          Library: LibraryIcon,
+          Search: SearchIcon,
+          Generate: Pressed_Gen
+          }); 
+        }}>
         <Image source={icons.Generate} style={[NavBarStyle.icon]} />
       </TouchableOpacity>
       <TouchableOpacity onPress={()=>{
-        setIcons(icons.Library === LibraryIcon ? {Library: Pressed_Lib} : {Library: LibraryIcon});}}>
+        setIcons({
+          Home: HomeIcon,
+          Library: Pressed_Lib,
+          Search: SearchIcon,
+          Generate: GenerateIcon
+          }); 
+        }}>
         <Image
           source={icons.Library}
           style={[NavBarStyle.icon, { marginRight: 32 }]}
