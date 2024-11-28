@@ -8,7 +8,7 @@ import
   Animated,
 } from "react-native";
 import Slider from "@react-native-community/slider";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import {
   ListenStyle,
   Bottom_Upper_Side,
@@ -24,7 +24,9 @@ import nextButton from "../../Assets/Listening Page/Next.png";
 import PlayButton from "../../Assets/Listening Page/playBlack.png";
 import stopButton from "../../Assets/Listening Page/pauseBlack.png";
 import closeButton from "../../Assets/closeWhite.png";
-export const Listen = ({ closeHook, closeHookVariable, listening, setListening }) => {
+export const Listen = ({myContext}) => {
+  const { vListening, vSetListening, vClose, vSetClose } = useContext(myContext);
+
   //zoom animation
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const [paused, setPaused] = useState(false);
@@ -50,10 +52,10 @@ export const Listen = ({ closeHook, closeHookVariable, listening, setListening }
     };
 
     startZoomAnimation();
-  }, [scaleAnim, !closeHook]);
+  }, [scaleAnim, !vClose]);
 
   return (
-    closeHookVariable && (
+    vClose && (
       <>
         {/* the background conatin bottom and upper elements like exit arrow and music time slider's parents */}
         <Animated.Image
@@ -76,7 +78,7 @@ export const Listen = ({ closeHook, closeHookVariable, listening, setListening }
                   <TouchableOpacity
                     style={UpperSide.button}
                     onPress={() => {
-                      closeHook(false);
+                      vSetClose(false);
                     }}
                   >
                     <Image
@@ -174,12 +176,12 @@ export const Listen = ({ closeHook, closeHookVariable, listening, setListening }
                     <TouchableOpacity
                       style={Bottom_Bottom_Side.Play_Pause_Button}
                       onPress={() => {
-                        setListening(!listening);
-                        console.log(listening);
+                        vSetListening(!vListening);
+                        console.log(vListening);
                       }}
                     >
                       <Image
-                        source={listening ? stopButton : PlayButton}
+                        source={vListening ? stopButton : PlayButton}
                         style={Bottom_Bottom_Side.Play_Pause_Button_Icon}
                       />
                     </TouchableOpacity>
