@@ -22,18 +22,18 @@ export default function App() {
     <>
     <myContext.Provider value={{vClose: close, vSetClose: setClose, vListening: listening, vSetListening: setListening}}>
       <Listen myContext={myContext}/>
-    </myContext.Provider>
       
       <LinearGradient
         colors={["#1A1A1A", "#0B0B0B"]}
         style={Style.background_gradient}
-      >
-        <MusicPanel setCloseHook={setClose} setListening={setListening} listening={listening}></MusicPanel>
+        >
+        <MusicPanel myContext={myContext}></MusicPanel>
         <SafeAreaView>
           <GeneratePage></GeneratePage>
         </SafeAreaView>
         <NavigationBar></NavigationBar>
       </LinearGradient>
+    </myContext.Provider>
     </>
   );
 }

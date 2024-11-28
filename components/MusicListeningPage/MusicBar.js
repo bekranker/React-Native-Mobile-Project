@@ -11,16 +11,17 @@ import { CurrentListeningStyle } from "../../styles/Pages/Music/CurrentListening
 import Tarkan from "../../Assets/pp.jpeg";
 import Playbutton from "../../Assets/Listening Page/Playbutton.png";
 import pause from "../../Assets/Listening Page/pause.png";
+import { useContext } from "react";
+export const MusicPanel = ({myContext}) => {
 
-export const MusicPanel = ({ setCloseHook, setListening, listening }) => {
-
+  const { vListening, vSetListening, vSetClose } = useContext(myContext);
 
   return (
     <>
       <TouchableOpacity
         style={CurrentListeningStyle.PanelContainer}
         onPress={() => {
-          setCloseHook(true);
+          vSetClose(true);
         }}
       >
         <Image source={Tarkan} style={CurrentListeningStyle.pp}></Image>
@@ -31,12 +32,12 @@ export const MusicPanel = ({ setCloseHook, setListening, listening }) => {
         <TouchableOpacity
           style={CurrentListeningStyle.playButton}
           onPress={() => {
-            setListening(!listening);
-            console.log(`istening from Generate Page is: ${listening}`);
+            vSetListening(!vListening);
+            console.log(`istening from Generate Page is: ${vListening}`);
           }}
         >
           <Image
-            source={(listening ? pause : Playbutton)}
+            source={(vListening ? pause : Playbutton)}
             style={CurrentListeningStyle.playIcon}
           ></Image>
         </TouchableOpacity>
