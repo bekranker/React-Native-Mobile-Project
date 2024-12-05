@@ -7,8 +7,10 @@ export const LibraryStyle = StyleSheet.create({
     display: "flex",
     columnGap: 24,
     marginLeft: 16,
+    gap: 24,
   },
   HeadText: {
+    marginTop: 24,
     textAlign: "left",
     fontSize: 25,
     fontWeight: "semibold",
@@ -18,7 +20,6 @@ export const LibraryStyle = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: 8,
-    marginTop: 24,
   },
   SongTypeButton:{
     height: 32,
@@ -34,5 +35,27 @@ export const LibraryStyle = StyleSheet.create({
     fontSize: 12,
     fontWeight: "regular",
     textAlign: "center",
+  },
+  ScrollList:{
+    display: "flex",
+    flexDirection: "column",
+    columnGap: 16,
+  },
+  PlayListContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  PlayListImage:{
+    width: 64,
+    height: 64,
+    borderRadius: 10
+  },
+  PlayListText:{
+    textAlign: "right",
+    color: "white",
+    fontSize: 14,
+    fontWeight: "regular",
   }
 });
