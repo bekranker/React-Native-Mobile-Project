@@ -46,8 +46,7 @@ export default function GeneratePage() {
                 color: "#ffffff",
                 fontSize: 10,
                 fontWeight: 400,
-                paddingHorizontal: 6,
-                paddingVertical: 4,
+                textAlign: "center",
                 flexWrap: "nowrap",
               }}
             >
@@ -64,8 +63,6 @@ export default function GeneratePage() {
               height: 25, // Smaller height
               backgroundColor: "#444444",
               borderRadius: 15,
-              justifyContent: "center", // Center text
-              alignItems: "center",
             }}
             onPress={() => console.log("Button Pressed")}
           >
