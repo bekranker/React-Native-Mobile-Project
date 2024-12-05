@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, Image } from "react-native";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { NavBarStyle } from "../styles/Pages/Music/MusicPanel";
 import GenerateIcon from "../Assets/Navigation Bar/Generate_Icon.png";
@@ -15,14 +15,14 @@ import Pressed_Search from "../Assets/Navigation Bar/Pressed_Search_Icon.png";
 
 
 
-export default function NavigationBar() {
+export default function NavigationBar({myContext}) {
   const [icons, setIcons] = useState({
     Home: HomeIcon,
     Library: LibraryIcon,
     Search: SearchIcon,
     Generate: Pressed_Gen,
   });
-  
+  const {layer, setLayer} = useContext(myContext); 
   return (
     <View style={NavBarStyle.backgroundContainer}>
       <TouchableOpacity onPress={()=>{
@@ -31,7 +31,8 @@ export default function NavigationBar() {
           Library: LibraryIcon,
           Search: SearchIcon,
           Generate: GenerateIcon
-          }); 
+          });
+          setLayer("Home");
         }}>
         <Image
           source={icons.Home}
@@ -45,6 +46,7 @@ export default function NavigationBar() {
           Search: Pressed_Search,
           Generate: GenerateIcon
           });
+          setLayer("Explore");
         }}>
         <Image source={icons.Search} style={NavBarStyle.icon} />
       </TouchableOpacity>
@@ -55,6 +57,8 @@ export default function NavigationBar() {
           Search: SearchIcon,
           Generate: Pressed_Gen
           }); 
+          setLayer("Generate");
+
         }}>
         <Image source={icons.Generate} style={[NavBarStyle.icon]} />
       </TouchableOpacity>
@@ -65,6 +69,8 @@ export default function NavigationBar() {
           Search: SearchIcon,
           Generate: GenerateIcon
           }); 
+          setLayer("Library");
+
         }}>
         <Image
           source={icons.Library}
