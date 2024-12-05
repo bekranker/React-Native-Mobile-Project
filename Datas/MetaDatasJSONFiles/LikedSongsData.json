@@ -1,0 +1,10 @@
+{
+  "Songs": {
+    "song": {
+      "name": "createdSongOne",
+      "image": "blablablabla",
+      "likeCount": "1",
+      "musicURL": "../LibraryMP3Files/CreatedSongs/createdSongOne.mp3"
+    }
+  }
+}
