@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native";
 import { useState, useContext, createContext } from "react";
 /* This Field is for Components */
@@ -6,6 +5,7 @@ import GeneratePage from "./components/Generate-Page/Generate";
 import NavigationBar from "./components/NavigationBar";
 import { MusicPanel } from "./components/MusicListeningPage/MusicBar";
 import { Listen } from "./components/MusicListeningPage/Listen";
+import ProfilePicture from "./components/Profile/ProfilePicture";
 /* This Field is for Stylies */
 import { Style } from "./styles/Pages/GeneratePage/GenerateStyle";
 /* This Field is for Extra Libraries */
@@ -17,6 +17,7 @@ export default function App() {
   
   const [close, setClose] = useState(false);
   const [listening, setListening] = useState(false);
+  const [layer, setLayer] = useState("Generate");
 
   return (
     <>
@@ -29,7 +30,9 @@ export default function App() {
         >
         <MusicPanel myContext={myContext}></MusicPanel>
         <SafeAreaView>
-          <GeneratePage></GeneratePage>
+          <ProfilePicture></ProfilePicture>
+          {layer == "Generate" && <GeneratePage></GeneratePage>}
+          
         </SafeAreaView>
         <NavigationBar></NavigationBar>
       </LinearGradient>
