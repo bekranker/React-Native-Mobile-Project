@@ -46,7 +46,6 @@ export const AllStyle = StyleSheet.create({
   },
   genreButtonParent: {
     display: "flex",
-
     flexDirection: "row",
     paddingVertical: 16,
     marginLeft: 6,
@@ -54,10 +53,9 @@ export const AllStyle = StyleSheet.create({
   genreButton: {
     marginRight: 16,
     backgroundColor: "#444444",
-    width: "64",
     height: "32",
-    paddingHorizontal: 18,
-    paddingVertical: 9,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     borderRadius: 20,
     shadowColor: "black",
     shadowOffset: { width: 0, height: 0 },
