@@ -1,26 +1,23 @@
-
-//build in Components
+//build in
 import { View, Text, TouchableOpacity, Image } from "react-native";
 
-//my Components
-import { ParseJsonToSongData } from "../DataParser";
+//My components
 
 //Styles
-import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
-import { useState } from "react";
+import PlayListStyle from "../../styles/Pages/Library/PlayList";
 
-//Temporary assets
-import pp from "../../Assets/pp.jpeg";
-
-export const PlayList = () => {
-
-  const data = ParseJsonToSongData();
+export const PlayList = ({ dataOfItem }) => {
+  const songPicture = dataOfItem.SongPicture; //as a url to img path
+  const songName = dataOfItem.SongName; //String
+  const creatorName = dataOfItem.CreatorName; //String
+  const likeCount = dataOfItem.LikeCount; //Int
+  const listenCount = dataOfItem.listenCount; //Int I think I need typescript... damn
   return (
     <>
-      <TouchableOpacity style={LibraryStyle.PlayListContainer}>
-        <Image source={pp} style={LibraryStyle.PlayListImage}></Image>
-        <Text style={LibraryStyle.PlayListText}>{data.name}</Text>
+      <TouchableOpacity style={PlayListStyle.Container}>
+        <Image source={songPicture} style={PlayListStyle.PlayListImage}></Image>
+        <Text style={PlayListStyle.PlayListText}>{name}</Text>
       </TouchableOpacity>
     </>
   );
-}
+};

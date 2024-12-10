@@ -14,21 +14,21 @@ export const LibraryStyle = StyleSheet.create({
     textAlign: "left",
     fontSize: 25,
     fontWeight: "semibold",
-    color: "white"
+    color: "white",
   },
   SongTypeContainer: {
     display: "flex",
     flexDirection: "row",
     gap: 8,
   },
-  SongTypeButton:{
+  SongTypeButton: {
     height: 32,
     paddingHorizontal: 16,
     backgroundColor: "#444444",
-    justifyContent :"center",
+    justifyContent: "center",
     borderRadius: 30,
   },
-  SongTypeButtonText:{
+  SongTypeButtonText: {
     width: "100%",
     height: "inherit",
     color: "white",
@@ -36,26 +36,26 @@ export const LibraryStyle = StyleSheet.create({
     fontWeight: "regular",
     textAlign: "center",
   },
-  ScrollList:{
-    display: "flex",
-    flexDirection: "column",
-    columnGap: 16,
-  },
+
   PlayListContainer: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
+    paddingTop: 16,
     gap: 8,
   },
-  PlayListImage:{
+  PlayListImage: {
     width: 64,
     height: 64,
-    borderRadius: 10
+    borderRadius: 7,
   },
-  PlayListText:{
+  PlayListText: {
     textAlign: "right",
     color: "white",
     fontSize: 14,
     fontWeight: "regular",
-  }
+    paddingTop: 12,
+  },
+  ScrollSide: {
+    height: 580,
+  },
 });

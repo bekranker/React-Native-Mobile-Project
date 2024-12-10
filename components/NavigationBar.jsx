@@ -16,13 +16,13 @@ import Pressed_Search from "../Assets/Navigation Bar/Pressed_Search_Icon.png";
 
 
 export default function NavigationBar({myContext}) {
-  const [icons, setIcons] = useState({
-    Home: HomeIcon,
-    Library: LibraryIcon,
-    Search: SearchIcon,
-    Generate: Pressed_Gen,
-  });
   const {layer, setLayer} = useContext(myContext); 
+  const [icons, setIcons] = useState({
+    Home: layer === "Home" ? Pressed_Home : HomeIcon,
+    Library: layer === "Library" ? Pressed_Lib : LibraryIcon,
+    Search: layer === "Explore" ? Pressed_Search : SearchIcon,
+    Generate: layer === "Generate" ? Pressed_Gen : Pressed_Gen,
+  });
   return (
     <View style={NavBarStyle.backgroundContainer}>
       <TouchableOpacity onPress={()=>{
