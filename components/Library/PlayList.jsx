@@ -11,12 +11,20 @@ export const PlayList = ({ dataOfItem }) => {
   const songName = dataOfItem.SongName; //String
   const creatorName = dataOfItem.CreatorName; //String
   const likeCount = dataOfItem.LikeCount; //Int
-  const listenCount = dataOfItem.listenCount; //Int I think I need typescript... damn
+  const listenCount = dataOfItem.ListenCount; //Int I think I need typescript... damn
   return (
     <>
       <TouchableOpacity style={PlayListStyle.Container}>
-        <Image source={songPicture} style={PlayListStyle.PlayListImage}></Image>
-        <Text style={PlayListStyle.PlayListText}>{name}</Text>
+        <View style={PlayListStyle.MultipelContainer}>
+          <Image
+            source={songPicture}
+            style={PlayListStyle.PlayListImage}
+          ></Image>
+          <View style={PlayListStyle.NamesContainer}>
+            <Text style={PlayListStyle.CreatorText}>{songName}</Text>
+            <Text style={PlayListStyle.CreatorText}>{creatorName}</Text>
+          </View>
+        </View>
       </TouchableOpacity>
     </>
   );

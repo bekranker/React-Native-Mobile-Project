@@ -9,6 +9,12 @@ export const PlayListStyle = StyleSheet.create({
     marginLeft: 16,
     gap: 24,
   },
+
+  MultipelContainer: { display: "flex" },
+  NamesContainer: {
+    display: "flex",
+    flexDirection: "column",
+  },
   CreatorText: {},
   SongNameText: {},
   ListenCountText: {},

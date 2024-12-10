@@ -5,7 +5,7 @@ import { useState } from "react";
 //my Components;
 import { Category } from "../CONSTANTS/constants";
 import { PlayListButton } from "./PlayListButton";
-
+import { PlayList } from "./PlayList";
 //styles;
 import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
 
@@ -13,17 +13,31 @@ import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
 import pp from "../../Assets/pp.jpeg";
 
 export const LibraryPage = () => {
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState(Category.DEBUG);
   const datasCreatedSongs = [
     {
       pp: pp,
       name: "Created Song Play List Name",
+      Data: {
+        SongPicture: pp,
+        SongName: "Song Name",
+        CreatorName: "Bekranker",
+        LikeCount: 0,
+        ListenCount: 0,
+      },
     },
   ];
   const datasLikedSongs = [
     {
       pp: pp,
       name: "Liked Song Play List name",
+      Data: {
+        SongPicture: pp,
+        SongName: "Song Name",
+        CreatorName: "Bekranker",
+        LikeCount: 0,
+        ListenCount: 0,
+      },
     },
   ];
   return (
@@ -55,7 +69,7 @@ export const LibraryPage = () => {
             data={datasCreatedSongs}
             keyExtractor={(_, index) => index}
             renderItem={({ item }) => (
-              <PlayListButton pp={item.pp} name={item.name} data={item} />
+              <PlayListButton pp={item.pp} name={item.name} data={item.Data} />
             )}
           />
         )}
@@ -64,7 +78,7 @@ export const LibraryPage = () => {
             data={datasLikedSongs}
             keyExtractor={(_, index) => index}
             renderItem={({ item }) => (
-              <PlayListButton pp={item.pp} name={item.name} data={item} />
+              <PlayListButton pp={item.pp} name={item.name} data={item.Data} />
             )}
           />
         )}
