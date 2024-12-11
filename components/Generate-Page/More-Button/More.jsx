@@ -1,3 +1,4 @@
+//built in;
 import {
   Text,
   View,
@@ -6,27 +7,17 @@ import {
   Animated,
   Easing,
 } from "react-native";
-import { AllStyle } from "../../../styles/Pages/GeneratePage/More-Section";
 import React, { useRef } from "react";
+
+//my components;
+import { GENRES } from "../../CONSTANTS/constants";
 import { ChooseButton } from "./Genre";
 
+//styles;
+import { AllStyle } from "../../../styles/Pages/GeneratePage/More-Section";
+
 //genres
-const genres = [
-  "Metal",
-  "Rock",
-  "Jazz",
-  "Blues",
-  "Lo-fi",
-  "Japanese",
-  "Pop",
-  "Classical",
-  "Hip-Hop",
-  "Country",
-  "EDM",
-  "Soul",
-  "Folk",
-  "Reggae",
-];
+const genres = GENRES;
 
 //instruments
 const instruments = [

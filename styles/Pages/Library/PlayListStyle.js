@@ -50,9 +50,23 @@ export const PlayListStyle = StyleSheet.create({
 });
 export const PlayListGenre = StyleSheet.create({
   Container: {
+    width: "94%",
     display: "flex",
     flexDirection: "column",
     gap: 8,
+  },
+  Button: {
+    backgroundColor: Colors.ButtonBackground,
+    borderRadius: 20,
+    width: 58,
+    height: 36,
+    justifyContent: "center",
+    marginLeft: 8,
+  },
+  ButtonText: {
+    color: Colors.ButtonText,
+    textAlign: "center",
+    fontSize: 12,
   },
 });
 export const PlayListPageStyle = StyleSheet.create({
@@ -70,6 +84,6 @@ export const PlayListPageStyle = StyleSheet.create({
     color: "white",
   },
   ScrollSide: {
-    height: 640,
+    height: 560,
   },
 });

@@ -1,5 +1,12 @@
 //build in Components;
-import { View, TouchableOpacity, FlatList, Text, Image } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  FlatList,
+  Text,
+  Image,
+  ScrollView,
+} from "react-native";
 import { useState, useContext } from "react";
 
 //my Components;
@@ -17,6 +24,7 @@ import backIcon from "../../Assets/closeWhite.png";
 
 export const PlayListPage = ({ context, data }) => {
   const { category, CategoryOpen, setCategoryOpen } = useContext(context);
+  const [filter, setFilter] = useState("");
   return (
     <>
       {/* Headers */}
@@ -43,13 +51,30 @@ export const PlayListPage = ({ context, data }) => {
           </TouchableOpacity>
           <Text style={PlayListPageStyle.HeadText}>{category}</Text>
         </View>
-        {/* Genres*/}
-        <View style={PlayListGenre.Container}></View>
+        {/* Genres */}
+        <View style={PlayListGenre.Container}>
+          <FlatList
+            horizontal={true}
+            data={GENRES}
+            keyExtractor={(_, index) => index}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={PlayListGenre.Button}
+                onPress={() => {
+                  setFilter(item);
+                  console.log(item);
+                }}
+              >
+                <Text style={PlayListGenre.ButtonText}>{item}</Text>
+              </TouchableOpacity>
+            )}
+          ></FlatList>
+        </View>
         {/* Musics */}
 
         <View style={PlayListPageStyle.ScrollSide}>
           <FlatList
-            data={data}
+            data={data.filter((item, index) => item.Genre !== filter)}
             keyExtractor={(_, index) => index}
             renderItem={({ item }) => (
               <PlayList dataOfItem={item} context={context} />

@@ -2,5 +2,6 @@
   "SongName": "Liked Song",
   "CreatorName": "Bekranker",
   "LikeCount": "0",
-  "ListenCount": "0"
+  "ListenCount": "0",
+  "Genre": "Rock"
 }
