@@ -4,9 +4,14 @@ import { useState, useContext } from "react";
 
 //my Components;
 import { PlayList } from "./PlayList";
+import { GENRES } from "../CONSTANTS/constants";
 
 //my Styles;
 import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
+import {
+  PlayListPageStyle,
+  PlayListGenre,
+} from "../../styles/Pages/Library/PlayListStyle";
 
 //Others;
 import backIcon from "../../Assets/closeWhite.png";
@@ -15,13 +20,14 @@ export const PlayListPage = ({ context, data }) => {
   const { category, CategoryOpen, setCategoryOpen } = useContext(context);
   return (
     <>
-      <View style={LibraryStyle.Container}>
+      {/* Headers */}
+      <View style={PlayListPageStyle.Container}>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            marginTop: 24,
+            marginTop: 40,
             gap: 15,
           }}
         >
@@ -36,16 +42,21 @@ export const PlayListPage = ({ context, data }) => {
               ]}
             />
           </TouchableOpacity>
-          <Text style={LibraryStyle.HeadText}>{category}</Text>
+          <Text style={PlayListPageStyle.HeadText}>{category}</Text>
         </View>
-        {/* Genres will come here */}
-        <FlatList
-          data={data}
-          keyExtractor={(_, index) => index}
-          renderItem={({ item }) => (
-            <PlayList dataOfItem={item} context={context} />
-          )}
-        />
+        {/* Genres*/}
+        <View style={PlayListGenre.Container}></View>
+        {/* Musics */}
+
+        <View style={PlayListPageStyle.ScrollSide}>
+          <FlatList
+            data={data}
+            keyExtractor={(_, index) => index}
+            renderItem={({ item }) => (
+              <PlayList dataOfItem={item} context={context} />
+            )}
+          />
+        </View>
       </View>
     </>
   );

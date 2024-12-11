@@ -12,3 +12,18 @@ export const Colors = {
   NormalText: "white",
   HeaderText: "",
 };
+export const GENRES = [
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+  "Rock",
+];

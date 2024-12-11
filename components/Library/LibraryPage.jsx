@@ -13,12 +13,12 @@ import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
 import pp from "../../Assets/pp.jpeg";
 
 import LikedSongJSONData from "../../Datas/LibraryMP3Files/CreatedSongs/LikedSongsData.json";
-import CreatedSongJSONData from "../../Datas/LibraryMP3Files/CreatedSongs/LikedSongsData.json";
+import CreatedSongJSONData from "../../Datas/LibraryMP3Files/CreatedSongs/CreateSongData.json";
 
 const context = createContext();
 
 export const LibraryPage = () => {
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState(Category.CREATED_SONGS);
   const [CategoryOpen, setCategoryOpen] = useState(false);
   const [playListType, setPlayListType] = useState();
   const DataOfLikedSongs = LikedSongJSONData;
@@ -28,6 +28,27 @@ export const LibraryPage = () => {
       pp: pp,
       name: "Created Song Play List Name",
       Data: [
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
+        DataOfCreatedSongs,
         DataOfCreatedSongs,
         DataOfCreatedSongs,
         DataOfCreatedSongs,
