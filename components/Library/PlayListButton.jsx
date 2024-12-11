@@ -5,27 +5,31 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { PlayList } from "./PlayList";
 //Styles;
 import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 //Temporary assets;
 
-export const PlayListButton = ({ name, pp, data }) => {
-  const [open, setOpen] = useState(false);
-
+export const PlayListButton = ({ name, pp, context, data }) => {
+  const {
+    category,
+    setCategory,
+    CategoryOpen,
+    setCategoryOpen,
+    playListType,
+    setPlayListType,
+  } = useContext(context);
   return (
     <>
       <TouchableOpacity
         style={LibraryStyle.PlayListContainer}
-        onPress={() => setOpen(true)}
+        onPress={() => {
+          setCategoryOpen(true);
+          setPlayListType(data);
+        }}
       >
         <Image source={pp} style={LibraryStyle.PlayListImage}></Image>
         <Text style={LibraryStyle.PlayListText}>{name}</Text>
       </TouchableOpacity>
-      {open && (
-        <View style={LibraryStyle.Container}>
-          <PlayList dataOfItem={data}></PlayList>
-        </View>
-      )}
     </>
   );
 };

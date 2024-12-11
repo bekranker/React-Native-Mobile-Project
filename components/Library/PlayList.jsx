@@ -4,7 +4,6 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 //My components
 
 //Styles
-import { PlayListStyle } from "../../styles/Pages/Library/PlayListStyle";
 
 export const PlayList = ({ dataOfItem }) => {
   const songPicture = dataOfItem.SongPicture; //as an url to img path
