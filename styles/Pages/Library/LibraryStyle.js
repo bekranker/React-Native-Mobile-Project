@@ -5,12 +5,10 @@ export const LibraryStyle = StyleSheet.create({
     width: "100%",
     height: "100%",
     display: "flex",
-    columnGap: 24,
     marginLeft: 16,
     gap: 24,
   },
   HeadText: {
-    marginTop: 24,
     textAlign: "left",
     fontSize: 25,
     fontWeight: "semibold",

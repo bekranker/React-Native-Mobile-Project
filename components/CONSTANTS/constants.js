@@ -6,3 +6,9 @@ export const Category = Object.freeze({
   LIKED_SONGS: "Liked songs",
   DEBUG: "debug mode",
 });
+export const Colors = {
+  ButtonBackground: "#262626",
+  ButtonText: "",
+  NormalText: "white",
+  HeaderText: "",
+};

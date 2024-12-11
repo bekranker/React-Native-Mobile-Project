@@ -1,34 +1,49 @@
-//build in Components
-import { View, TouchableOpacity, FlatList } from "react-native";
+//build in Components;
+import { View, TouchableOpacity, FlatList, Text, Image } from "react-native";
 import { useState, useContext } from "react";
 
-//my Components
+//my Components;
+import { PlayList } from "./PlayList";
 
-//my Styles
+//my Styles;
 import { LibraryStyle } from "../../styles/Pages/Library/LibraryStyle";
 
-//Others
+//Others;
+import backIcon from "../../Assets/closeWhite.png";
 
 export const PlayListPage = ({ context, data }) => {
-  const {
-    category,
-    setCategory,
-    CategoryOpen,
-    setCategoryOpen,
-    playListType,
-    setPlayListType,
-  } = useContext(context);
-
-  const flatData = data;
+  const { category, CategoryOpen, setCategoryOpen } = useContext(context);
   return (
     <>
       <View style={LibraryStyle.Container}>
-        <Text style={LibraryStyle.HeadText}>{category}</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            marginTop: 24,
+            gap: 15,
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => setCategoryOpen(false)}
+            style={{ width: 15, height: 15 }}
+          >
+            <Image
+              source={backIcon}
+              style={[
+                { width: 15, height: 15, transform: [{ rotate: "90deg" }] },
+              ]}
+            />
+          </TouchableOpacity>
+          <Text style={LibraryStyle.HeadText}>{category}</Text>
+        </View>
+        {/* Genres will come here */}
         <FlatList
-          data={flatData}
+          data={data}
           keyExtractor={(_, index) => index}
           renderItem={({ item }) => (
-            <PlayListButton pp={item.pp} name={item.name} data={item.Data} />
+            <PlayList dataOfItem={item} context={context} />
           )}
         />
       </View>

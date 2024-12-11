@@ -25,6 +25,7 @@ export const PlayListButton = ({ name, pp, context, data }) => {
         onPress={() => {
           setCategoryOpen(true);
           setPlayListType(data);
+          console.log(data);
         }}
       >
         <Image source={pp} style={LibraryStyle.PlayListImage}></Image>

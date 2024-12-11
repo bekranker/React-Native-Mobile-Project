@@ -1,26 +1,44 @@
 import { StyleSheet } from "react-native";
 
+//Constants
+import { Colors } from "../../../components/CONSTANTS/constants";
+
 export const PlayListStyle = StyleSheet.create({
   Container: {
-    width: "100%",
-    height: "100%",
+    width: 398,
+    height: 60,
     display: "flex",
-    columnGap: 24,
-    marginLeft: 16,
-    gap: 24,
+    flexDirection: "row",
+    backgroundColor: Colors.ButtonBackground,
+    borderRadius: 5,
+    marginBottom: 16,
+    alignItems: "center",
   },
 
-  MultipelContainer: { display: "flex" },
+  MultipleContainer: { display: "flex" },
   NamesContainer: {
+    marginLeft: 7,
     display: "flex",
     flexDirection: "column",
+    gap: 6,
   },
-  CreatorText: {},
-  SongNameText: {},
+  CreatorText: {
+    fontSize: 14,
+    fontWeight: "regular",
+    color: Colors.NormalText,
+  },
+  SongNameText: {
+    fontSize: 14,
+    fontWeight: "regular",
+    color: Colors.NormalText,
+  },
   ListenCountText: {},
   LikeButton: {},
   SongImage: {
-    width: 64,
-    height: 64,
+    marginLeft: 4,
+    width: 48,
+    height: 48,
+    borderRadius: 5,
   },
+  ListenImage: {},
 });
