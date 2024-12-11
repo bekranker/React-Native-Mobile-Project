@@ -19,4 +19,8 @@ export const PlayListStyle = StyleSheet.create({
   SongNameText: {},
   ListenCountText: {},
   LikeButton: {},
+  SongImage: {
+    width: 64,
+    height: 64,
+  },
 });

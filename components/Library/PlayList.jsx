@@ -4,10 +4,10 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 //My components
 
 //Styles
-import PlayListStyle from "../../styles/Pages/Library/PlayList";
+import { PlayListStyle } from "../../styles/Pages/Library/PlayListStyle";
 
 export const PlayList = ({ dataOfItem }) => {
-  const songPicture = dataOfItem.SongPicture; //as a url to img path
+  const songPicture = dataOfItem.SongPicture; //as an url to img path
   const songName = dataOfItem.SongName; //String
   const creatorName = dataOfItem.CreatorName; //String
   const likeCount = dataOfItem.LikeCount; //Int
@@ -15,11 +15,8 @@ export const PlayList = ({ dataOfItem }) => {
   return (
     <>
       <TouchableOpacity style={PlayListStyle.Container}>
-        <View style={PlayListStyle.MultipelContainer}>
-          <Image
-            source={songPicture}
-            style={PlayListStyle.PlayListImage}
-          ></Image>
+        <View style={PlayListStyle.NamesAndImageContainer}>
+          <Image source={songPicture} style={PlayListStyle.SongImage}></Image>
           <View style={PlayListStyle.NamesContainer}>
             <Text style={PlayListStyle.CreatorText}>{songName}</Text>
             <Text style={PlayListStyle.CreatorText}>{creatorName}</Text>

@@ -21,7 +21,11 @@ export const PlayListButton = ({ name, pp, data }) => {
         <Image source={pp} style={LibraryStyle.PlayListImage}></Image>
         <Text style={LibraryStyle.PlayListText}>{name}</Text>
       </TouchableOpacity>
-      {open && <PlayList dataOfItem={data}></PlayList>}
+      {open && (
+        <View style={LibraryStyle.Container}>
+          <PlayList dataOfItem={data}></PlayList>
+        </View>
+      )}
     </>
   );
 };
