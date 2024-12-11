@@ -1,12 +1,5 @@
 //build in Components;
-import {
-  View,
-  TouchableOpacity,
-  FlatList,
-  Text,
-  Image,
-  ScrollView,
-} from "react-native";
+import { View, TouchableOpacity, FlatList, Text, Image } from "react-native";
 import { useState, useContext } from "react";
 
 //my Components;
@@ -24,7 +17,7 @@ import backIcon from "../../Assets/closeWhite.png";
 
 export const PlayListPage = ({ context, data }) => {
   const { category, CategoryOpen, setCategoryOpen } = useContext(context);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("Rock");
   return (
     <>
       {/* Headers */}
@@ -36,6 +29,7 @@ export const PlayListPage = ({ context, data }) => {
             alignItems: "center",
             marginTop: 40,
             gap: 15,
+            marginLeft: 16,
           }}
         >
           <TouchableOpacity
@@ -54,6 +48,7 @@ export const PlayListPage = ({ context, data }) => {
         {/* Genres */}
         <View style={PlayListGenre.Container}>
           <FlatList
+            contentContainerStyle={{ height: 45, alignItems: "center" }}
             horizontal={true}
             data={GENRES}
             keyExtractor={(_, index) => index}
@@ -62,7 +57,7 @@ export const PlayListPage = ({ context, data }) => {
                 style={PlayListGenre.Button}
                 onPress={() => {
                   setFilter(item);
-                  console.log(item);
+                  console.log(data);
                 }}
               >
                 <Text style={PlayListGenre.ButtonText}>{item}</Text>
@@ -74,7 +69,12 @@ export const PlayListPage = ({ context, data }) => {
 
         <View style={PlayListPageStyle.ScrollSide}>
           <FlatList
-            data={data.filter((item, index) => item.Genre !== filter)}
+            contentContainerStyle={{
+              width: "100%",
+              alignItems: "center",
+              marginTop: 5,
+            }}
+            data={data.filter((item) => item.Genre === filter)}
             keyExtractor={(_, index) => index}
             renderItem={({ item }) => (
               <PlayList dataOfItem={item} context={context} />

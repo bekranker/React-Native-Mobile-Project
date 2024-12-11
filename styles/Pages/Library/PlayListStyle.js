@@ -13,6 +13,10 @@ export const PlayListStyle = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 16,
     alignItems: "center",
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 0 },
+    shadowRadius: 5,
+    shadowOpacity: 0.2,
   },
   MultipleContainer: {
     display: "flex",
@@ -50,10 +54,12 @@ export const PlayListStyle = StyleSheet.create({
 });
 export const PlayListGenre = StyleSheet.create({
   Container: {
-    width: "94%",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
     gap: 8,
+    marginLeft: 7,
   },
   Button: {
     backgroundColor: Colors.ButtonBackground,
@@ -62,6 +68,10 @@ export const PlayListGenre = StyleSheet.create({
     height: 36,
     justifyContent: "center",
     marginLeft: 8,
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 0 },
+    shadowRadius: 5,
+    shadowOpacity: 0.2,
   },
   ButtonText: {
     color: Colors.ButtonText,
@@ -74,7 +84,6 @@ export const PlayListPageStyle = StyleSheet.create({
     width: "100%",
     height: "100%",
     display: "flex",
-    marginLeft: 16,
     gap: 24,
   },
   HeadText: {
@@ -85,5 +94,6 @@ export const PlayListPageStyle = StyleSheet.create({
   },
   ScrollSide: {
     height: 560,
+    width: "100%",
   },
 });

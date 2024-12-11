@@ -10,7 +10,7 @@ export const Colors = {
   ButtonBackground: "#262626",
   ButtonText: "white",
   NormalText: "white",
-  HeaderText: "",
+  HeaderText: "white",
 };
 export const GENRES = [
   "Metal",
