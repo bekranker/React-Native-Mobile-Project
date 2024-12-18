@@ -1,20 +1,26 @@
 //build in components
-import { Image, TouchableOpacity } from "react-native";
-
+import { Image, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
 //other components
 import { profilePicture } from "../CONSTANTS/constants";
+import { ProfileWithCircle } from "./ProfileWithCircle";
 
 //styles
 import { ProfilePictureStyle } from "../../styles/Pages/Profile/ProfileButton";
 
-
-const ProfilePicture = props => {
+const ProfilePicture = ({ style }) => {
+  const [sliderHidden, setSliderHidden] = useState(false);
   return (
-    <TouchableOpacity style={ProfilePictureStyle.Container} onPress={()=>console.log("sa")}>
-        <Image source={profilePicture} style={ProfilePictureStyle.Photo}></Image>
-    </TouchableOpacity>
-    
-  )
-}
+    <View style={style}>
+      <TouchableOpacity style={ProfilePictureStyle.Container}>
+        <Image
+          source={profilePicture}
+          style={ProfilePictureStyle.Photo}
+        ></Image>
+        {sliderHidden && <ProfileWithCircle></ProfileWithCircle>}
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-export default ProfilePicture
+export default ProfilePicture;
