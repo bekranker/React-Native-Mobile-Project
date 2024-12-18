@@ -2,22 +2,17 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
 //other components
-import { profilePicture } from "../CONSTANTS/constants";
 import { ProfileWithCircle } from "./ProfileWithCircle";
 
 //styles
 import { ProfilePictureStyle } from "../../styles/Pages/Profile/ProfileButton";
 
-const ProfilePicture = ({ style }) => {
-  const [sliderHidden, setSliderHidden] = useState(false);
+const ProfilePicture = ({ style, hidden, radius, imageSource }) => {
   return (
     <View style={style}>
       <TouchableOpacity style={ProfilePictureStyle.Container}>
-        <Image
-          source={profilePicture}
-          style={ProfilePictureStyle.Photo}
-        ></Image>
-        {sliderHidden && <ProfileWithCircle></ProfileWithCircle>}
+        <Image source={imageSource} style={ProfilePictureStyle.Photo}></Image>
+        {hidden && <ProfileWithCircle radius={radius}></ProfileWithCircle>}
       </TouchableOpacity>
     </View>
   );

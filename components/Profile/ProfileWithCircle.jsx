@@ -4,15 +4,15 @@ import { Emitter } from "react-native-particles";
 //my components
 import CircleSlider from "../Generate-Page/CircleSlider";
 
-export const ProfileWithCircle = () => {
+export const ProfileWithCircle = ({ radius }) => {
   return (
     <>
       <CircleSlider
-        radius={20}
-        strokeWidth={3}
+        radius={radius}
+        strokeWidth={4}
         progress={75} // %75 ilerleme
-        trackColor="#d3d3d3"
-        progressColor="#2196f3"
+        trackColor="gray"
+        progressColor="#ffffff"
       />
     </>
   );
