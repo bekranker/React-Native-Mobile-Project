@@ -101,14 +101,3 @@ export const DailyQuest = StyleSheet.create({
     marginTop: 16,
   },
 });
-export const WeeklyQuest = StyleSheet.create({
-  Container: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: Colors.ButtonBackground,
-    width: 414,
-    height: 265,
-    borderRadius: 10,
-    marginTop: 16,
-  },
-});

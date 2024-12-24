@@ -1,14 +1,5 @@
 //built in;
-import {
-  View,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  StyleSheet,
-} from "react-native";
-import { useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import * as Progress from "react-native-progress";
 //my components;
 import { Colors } from "../../CONSTANTS/constants";

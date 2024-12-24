@@ -1,10 +1,9 @@
-//build in components
+//build in components;
 import { Image, TouchableOpacity, View } from "react-native";
-import { useState } from "react";
-//other components
+//other components;
 import { ProfileWithCircle } from "./ProfileWithCircle";
 
-//styles
+//styles;
 import { ProfilePictureStyle } from "../../styles/Pages/Profile/ProfileButton";
 
 const ProfilePicture = ({ style, hidden, radius, imageSource }) => {
