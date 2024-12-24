@@ -8,8 +8,10 @@ export const ProfileStyle = StyleSheet.create({
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
+    marginTop: 40,
   },
-  Top: { top: 80 },
+  Top: {},
 });
 export const TopPart = StyleSheet.create({
   Statues: {
@@ -77,7 +79,36 @@ export const TopPart = StyleSheet.create({
 export const AchivmentPart = StyleSheet.create({
   Container: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     backgroundColor: Colors.ButtonBackground,
+    width: 414,
+    height: 108,
+    borderRadius: 10,
+    marginTop: 49,
+  },
+});
+export const DailyQuest = StyleSheet.create({
+  Container: {
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: 36,
+    gap: 16,
+    backgroundColor: Colors.ButtonBackground,
+    width: 414,
+    height: 265,
+    borderRadius: 10,
+    marginTop: 16,
+  },
+});
+export const WeeklyQuest = StyleSheet.create({
+  Container: {
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: Colors.ButtonBackground,
+    width: 414,
+    height: 265,
+    borderRadius: 10,
+    marginTop: 16,
   },
 });

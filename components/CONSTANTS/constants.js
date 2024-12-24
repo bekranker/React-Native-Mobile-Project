@@ -8,6 +8,7 @@ export const Category = Object.freeze({
 });
 export const Colors = {
   ButtonBackground: "#262626",
+  QuestBoxBackgroundColor: "#cccccc",
   ButtonText: "white",
   NormalText: "white",
   HeaderText: "white",

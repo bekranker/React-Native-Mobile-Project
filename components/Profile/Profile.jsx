@@ -5,15 +5,19 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from "react-native";
 import { useState } from "react";
 
 //my components;
 import ProfilePicture from "./ProfilePicture";
+import { QuestBox } from "./Quests/QuestBox";
 //styles;
 import { ProfileStyle } from "../../styles/Pages/Profile/ProfilePage";
 import { TopPart } from "../../styles/Pages/Profile/ProfilePage";
 import { AchivmentPart } from "../../styles/Pages/Profile/ProfilePage";
+import { DailyQuest } from "../../styles/Pages/Profile/ProfilePage";
+import { WeeklyQuest } from "../../styles/Pages/Profile/ProfilePage";
 //others
 import closeButton from "../../Assets/closeWhite.png";
 import pp from "../../Assets/pp.png";
@@ -60,7 +64,41 @@ export const Profile = () => {
             </View>
           </View>
         </View>
-        <View style={AchivmentPart.Container}></View>
+        <ScrollView contentContainerStyle={{ height: 1000 }}>
+          <View style={AchivmentPart.Container}></View>
+          <View style={DailyQuest.Container}>
+            <Text
+              style={{
+                position: "absolute",
+                color: "white",
+                fontSize: 16,
+                fontWeight: "semibold",
+                marginTop: 8,
+              }}
+            >
+              Daily Quests
+            </Text>
+            <QuestBox
+              name={"Create 3 pop song"}
+              count={3}
+              completedCount={2}
+              Price={100}
+            />
+            <QuestBox
+              name={"Create 8 rock song"}
+              count={8}
+              completedCount={5}
+              Price={500}
+            />
+            <QuestBox
+              name={"Listen 100 song"}
+              count={100}
+              completedCount={54}
+              Price={2000}
+            />
+          </View>
+          <View style={WeeklyQuest.Container}></View>
+        </ScrollView>
       </View>
     </>
   );
