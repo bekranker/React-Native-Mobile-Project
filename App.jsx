@@ -11,15 +11,18 @@ import { LibraryPage } from "./components/Library/LibraryPage";
 import { ProfileWithCircle } from "./components/Profile/ProfileWithCircle";
 /* This Field is for Stylies */
 import { Style } from "./styles/Pages/GeneratePage/GenerateStyle";
+import { ProfilePictureStyle } from "./styles/Pages/Profile/ProfileButton";
+
 /* This Field is for Extra Libraries */
 import { LinearGradient } from "expo-linear-gradient";
 import { Profile } from "./components/Profile/Profile";
+import pp from "./Assets/pp.jpeg";
 
 const myContext = createContext();
 export default function App() {
   const [close, setClose] = useState(false);
   const [listening, setListening] = useState(false);
-  const [layer, setLayer] = useState("Profile");
+  const [layer, setLayer] = useState("Generate");
 
   return (
     <>
@@ -45,7 +48,14 @@ export default function App() {
             {layer === "Library" && <LibraryPage></LibraryPage>}
             {layer === "Home" && <BlankPage></BlankPage>}
             {layer === "Explore" && <BlankPage></BlankPage>}
-            {layer !== "Profile" && <ProfilePicture></ProfilePicture>}
+            {layer !== "Profile" && (
+              <ProfilePicture
+                hidden={false}
+                radius={10}
+                imageSource={pp}
+                customStyle={ProfilePictureStyle.View}
+              ></ProfilePicture>
+            )}
           </SafeAreaView>
           <MusicPanel myContext={myContext}></MusicPanel>
           <NavigationBar myContext={myContext}></NavigationBar>
