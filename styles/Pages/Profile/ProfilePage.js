@@ -79,7 +79,9 @@ export const TopPart = StyleSheet.create({
 export const AchivmentPart = StyleSheet.create({
   Container: {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "space-around",
+    alignItems: "center",
+    flexDirection: "row",
     backgroundColor: Colors.ButtonBackground,
     width: 414,
     height: 108,

@@ -17,5 +17,6 @@ export const ProfilePictureStyle = StyleSheet.create({
     borderRadius: 100,
     marginRight: 16,
     marginTop: 86,
+    right: 10,
   },
 });

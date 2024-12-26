@@ -1,19 +1,13 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-  TextInput,
-  Image,
-} from "react-native";
+//built in
+import { Text, View, TouchableOpacity, Image } from "react-native";
+import { useContext } from "react";
+//styles
 import { CurrentListeningStyle } from "../../styles/Pages/Music/CurrentListening";
+//others
 import Tarkan from "../../Assets/pp.jpeg";
 import Playbutton from "../../Assets/Listening Page/Playbutton.png";
 import pause from "../../Assets/Listening Page/pause.png";
-import { useContext } from "react";
-export const MusicPanel = ({myContext}) => {
-
+export const MusicPanel = ({ myContext }) => {
   const { vListening, vSetListening, vSetClose } = useContext(myContext);
 
   return (
@@ -37,7 +31,7 @@ export const MusicPanel = ({myContext}) => {
           }}
         >
           <Image
-            source={(vListening ? pause : Playbutton)}
+            source={vListening ? pause : Playbutton}
             style={CurrentListeningStyle.playIcon}
           ></Image>
         </TouchableOpacity>
@@ -45,4 +39,3 @@ export const MusicPanel = ({myContext}) => {
     </>
   );
 };
-

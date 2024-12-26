@@ -14,8 +14,13 @@ import { DailyQuest } from "../../styles/Pages/Profile/ProfilePage";
 import closeButton from "../../Assets/closeWhite.png";
 import pp from "../../Assets/pp.png";
 import kalemIcon from "../../Assets/pen.png";
+import Like_Achivement from "../../Assets/Like_Achivement.png";
+import Listen_Achivement from "../../Assets/Listen_Achivement.png";
+import Discovery_Achivement from "../../Assets/Discovery_Achivement.png";
+import Creator_Achivement from "../../Assets/Creator_Achivement.png";
+import { Colors } from "../CONSTANTS/constants";
+
 export const Profile = () => {
-  const [circleHidden, setCircleHidden] = useState(true);
   return (
     <>
       <View style={ProfileStyle.Container}>
@@ -29,6 +34,8 @@ export const Profile = () => {
               hidden={true}
               radius={51}
               imageSource={pp}
+              customStyle={TopPart.ProfilePhoto}
+              clickFunction={() => console.log("sa")}
             ></ProfilePicture>
             <View style={TopPart.ProfileNamesContainer}>
               <Text style={TopPart.ProfileName}>Bekranker</Text>
@@ -57,7 +64,56 @@ export const Profile = () => {
           </View>
         </View>
         <ScrollView contentContainerStyle={{ height: 1000 }}>
-          <View style={AchivmentPart.Container}></View>
+          <View style={AchivmentPart.Container}>
+            <View
+              style={{
+                backgroundColor: "#444444",
+                width: 62,
+                height: 62,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 10,
+              }}
+            >
+              <Image source={Listen_Achivement}></Image>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#444444",
+                width: 62,
+                height: 62,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 10,
+              }}
+            >
+              <Image source={Discovery_Achivement}></Image>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#444444",
+                width: 62,
+                height: 62,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 10,
+              }}
+            >
+              <Image source={Creator_Achivement}></Image>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#444444",
+                width: 62,
+                height: 62,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 10,
+              }}
+            >
+              <Image source={Like_Achivement}></Image>
+            </View>
+          </View>
           <View style={DailyQuest.Container}>
             <Text
               style={{

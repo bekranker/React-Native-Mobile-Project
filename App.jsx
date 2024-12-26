@@ -22,8 +22,10 @@ const myContext = createContext();
 export default function App() {
   const [close, setClose] = useState(false);
   const [listening, setListening] = useState(false);
-  const [layer, setLayer] = useState("Generate");
-
+  const [layer, setLayer] = useState("Profile");
+  const openProfilePage = () => {
+    setLayer("Profile");
+  };
   return (
     <>
       <myContext.Provider
@@ -33,7 +35,7 @@ export default function App() {
           vListening: listening,
           vSetListening: setListening,
           layer: layer,
-          setLayer,
+          setLayer: setLayer,
         }}
       >
         <Listen myContext={myContext} />
@@ -54,7 +56,10 @@ export default function App() {
                 radius={10}
                 imageSource={pp}
                 customStyle={ProfilePictureStyle.View}
-              ></ProfilePicture>
+                clickFunction={() => {
+                  openProfilePage();
+                }}
+              />
             )}
           </SafeAreaView>
           <MusicPanel myContext={myContext}></MusicPanel>
