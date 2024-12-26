@@ -22,7 +22,8 @@ const myContext = createContext();
 export default function App() {
   const [close, setClose] = useState(false);
   const [listening, setListening] = useState(false);
-  const [layer, setLayer] = useState("Profile");
+  const [layer, setLayer] = useState("Generate");
+  const [musicCreated, setMusicCreated] = useState(false);
   const openProfilePage = () => {
     setLayer("Profile");
   };
@@ -62,7 +63,7 @@ export default function App() {
               />
             )}
           </SafeAreaView>
-          <MusicPanel myContext={myContext}></MusicPanel>
+          {musicCreated && <MusicPanel myContext={myContext}></MusicPanel>}
           <NavigationBar myContext={myContext}></NavigationBar>
         </LinearGradient>
       </myContext.Provider>

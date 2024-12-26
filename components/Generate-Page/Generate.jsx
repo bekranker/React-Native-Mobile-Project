@@ -1,12 +1,6 @@
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
+import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
 import MoreButton, { PanelOpen } from "./More-Button/More";
-import { SlideUpAnim } from "./More-Button/More";
 export default function GeneratePage() {
   return (
     <>
@@ -23,7 +17,9 @@ export default function GeneratePage() {
             multiline
             numberOfLines={20}
             textAlignVertical="top"
-          ></TextInput>
+          >
+            {}
+          </TextInput>
           {/* Its the Suprise Me button */}
           <TouchableOpacity
             style={{

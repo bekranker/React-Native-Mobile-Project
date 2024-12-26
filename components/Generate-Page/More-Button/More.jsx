@@ -49,7 +49,7 @@ let slideUpAndFadeIn = () => {
     }),
   ]).start();
 };
-export default function MoreButton() {
+export default function MoreButton({ OnClickButtonFunction, inputField }) {
   const slideAnim = useRef(new Animated.Value(0)).current;
   const opacityAnim = useRef(new Animated.Value(1)).current;
   slideUpAndFadeIn = () => {
@@ -119,14 +119,22 @@ export default function MoreButton() {
             {/* İlk Satır */}
             <View style={AllStyle.genreButtonParent}>
               {firstRowGenres.map((name, index) => (
-                <ChooseButton key={`first-${index}`} name={name} />
+                <ChooseButton
+                  key={`first-${index}`}
+                  name={name}
+                  onClick={OnClickButtonFunction}
+                />
               ))}
             </View>
 
             {/* İkinci Satır */}
             <View style={AllStyle.genreButtonParent}>
               {secondRowGenres.map((name, index) => (
-                <ChooseButton key={`second-${index}`} name={name} />
+                <ChooseButton
+                  key={`second-${index}`}
+                  name={name}
+                  onClick={OnClickButtonFunction}
+                />
               ))}
             </View>
           </View>
@@ -145,14 +153,22 @@ export default function MoreButton() {
             {/* İlk Satır */}
             <View style={AllStyle.genreButtonParent}>
               {firstRowInstruments.map((name, index) => (
-                <ChooseButton key={`first-${index}`} name={name} />
+                <ChooseButton
+                  key={`first-${index}`}
+                  name={name}
+                  onClick={OnClickButtonFunction}
+                />
               ))}
             </View>
 
             {/* İkinci Satır */}
             <View style={AllStyle.genreButtonParent}>
               {secondRowInstruments.map((name, index) => (
-                <ChooseButton key={`second-${index}`} name={name} />
+                <ChooseButton
+                  key={`second-${index}`}
+                  name={name}
+                  onClick={OnClickButtonFunction}
+                />
               ))}
             </View>
           </View>
