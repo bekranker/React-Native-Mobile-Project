@@ -1,7 +1,11 @@
 import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
 import MoreButton, { PanelOpen } from "./More-Button/More";
+import { useState, createContext } from "react";
 export default function GeneratePage() {
+  const context = createContext();
+
+  const [inputField, setInputField] = useState("");
   return (
     <>
       <View style={Style.generate_container}>
@@ -18,7 +22,7 @@ export default function GeneratePage() {
             numberOfLines={20}
             textAlignVertical="top"
           >
-            {}
+            {inputField}
           </TextInput>
           {/* Its the Suprise Me button */}
           <TouchableOpacity
@@ -118,7 +122,11 @@ export default function GeneratePage() {
             Generate
           </Text>
         </TouchableOpacity>
-        <MoreButton key={""} />
+        <context.Provider
+          value={{ inputField: inputField, setInputField: setInputField }}
+        >
+          <MoreButton key={""} context={context} />
+        </context.Provider>
       </View>
     </>
   );
