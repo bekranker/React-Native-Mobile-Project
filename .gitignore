@@ -2,7 +2,6 @@
 
 # dependencies
 node_modules/
-/APIKEY.js
 # Expo
 .expo/
 dist/
@@ -33,3 +32,8 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+#other
+/components/Generate-Page/Generate.jsx
+#API
+.env

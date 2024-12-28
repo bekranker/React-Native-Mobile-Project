@@ -2,10 +2,36 @@ import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
 import MoreButton, { PanelOpen } from "./More-Button/More";
 import { useState, createContext } from "react";
+import axios from "axios";
+import { OPENAI_API_KEY } from "@env";
+import OpenAI from "openai";
+
 export default function GeneratePage() {
   const context = createContext();
-
+  const [CreatingProfile, setCreatingProfile] = useState(false);
   const [inputField, setInputField] = useState("");
+  const api = OPENAI_API_KEY;
+  const openai = new OpenAI({ apiKey: api });
+
+  const completion = async () => {
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          {
+            role: "user",
+            content: "Write a haiku about recursion in programming.",
+          },
+        ],
+      });
+      console.log(response.data); // Log the response or handle it as needed
+    } catch (error) {
+      console.error("An error occurred:", error.message);
+      // Optionally handle specific error cases here
+    }
+  };
+
   return (
     <>
       <View style={Style.generate_container}>
@@ -37,7 +63,9 @@ export default function GeneratePage() {
               justifyContent: "center", // Center text
               alignItems: "center",
             }}
-            onPress={() => console.log("Button Pressed")}
+            onPress={() => {
+              completion();
+            }}
           >
             <Text
               style={{
