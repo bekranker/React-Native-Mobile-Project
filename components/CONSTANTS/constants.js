@@ -1,4 +1,7 @@
+//Assets
 import AlbumPP from "../../Assets/pp.jpeg";
+
+//Musics
 
 export const profilePicture = AlbumPP;
 export const Category = Object.freeze({
@@ -29,3 +32,4 @@ export const GENRES = [
   "Folk",
   "Reggae",
 ];
+export const Musics = [""];

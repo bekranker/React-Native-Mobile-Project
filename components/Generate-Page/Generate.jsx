@@ -1,10 +1,16 @@
+//build in Components
 import { Text, View, TouchableOpacity, TextInput } from "react-native";
-import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
+import { useState, createContext, useContext } from "react";
+
+//my Components
 import MoreButton, { PanelOpen } from "./More-Button/More";
-import { useState, createContext } from "react";
+
+//styles
+import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
 
 export default function GeneratePage({ myContext }) {
   const context = createContext();
+  const { musicList, setMusicList } = useContext(myContext);
   const [CreatingProfile, setCreatingProfile] = useState(false);
   const [inputField, setInputField] = useState("");
 
