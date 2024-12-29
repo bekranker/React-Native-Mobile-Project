@@ -24,6 +24,7 @@ export default function App() {
   const [listening, setListening] = useState(false);
   const [layer, setLayer] = useState("Generate");
   const [musicCreated, setMusicCreated] = useState(false);
+  const [musicList, setMusicList] = useState([]);
   const openProfilePage = () => {
     setLayer("Profile");
   };
@@ -37,6 +38,8 @@ export default function App() {
           vSetListening: setListening,
           layer: layer,
           setLayer: setLayer,
+          musicList: musicList,
+          setMusicList: setMusicList,
         }}
       >
         <Listen myContext={myContext} />
@@ -47,7 +50,9 @@ export default function App() {
         >
           <SafeAreaView>
             {layer === "Profile" && <Profile></Profile>}
-            {layer === "Generate" && <GeneratePage></GeneratePage>}
+            {layer === "Generate" && (
+              <GeneratePage myContext={myContext}></GeneratePage>
+            )}
             {layer === "Library" && <LibraryPage></LibraryPage>}
             {layer === "Home" && <BlankPage></BlankPage>}
             {layer === "Explore" && <BlankPage></BlankPage>}
