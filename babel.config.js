@@ -6,11 +6,12 @@ module.exports = function (api) {
       [
         "module-resolver",
         {
-          root: ["./src"],
+          root: ["./"], // Root directory
           alias: {
-            "@assets": "./src/assets",
-            "@components": "./src/components",
-            "@styles": "./src/styles",
+            "@assets": "./Assets", // Assuming "Assets" is in the root directory
+            "@components": "./Components", // Assuming "Components" is in the root directory
+            "@styles": "./Styles", // Assuming "Styles" is in the root directory
+            "@Musics": "./Assets/Musics", // If Musics is under Assets
           },
         },
       ],

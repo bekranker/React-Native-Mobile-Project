@@ -32,4 +32,29 @@ export const GENRES = [
   "Folk",
   "Reggae",
 ];
-export const Musics = [""];
+export const Musics = [
+  {
+    Name: "Country",
+    Path: "/@Musics/Country.mp3",
+  },
+  {
+    Name: "80sPop",
+    Path: "/@Musics/80sPop.mp3",
+  },
+  {
+    Name: "Jazz",
+    Path: "/@Musics/Jazz.mp3",
+  },
+  {
+    Name: "Rock",
+    Rock: "/@Musics/Rock.mp3",
+  },
+  {
+    Name: "Metal",
+    Metal: "/@Musics/Metal.mp3",
+  },
+  {
+    Name: "HipHop Rap",
+    HipHopRap: "/@Musics/Raphiphop.mp3",
+  },
+];

@@ -4,6 +4,7 @@ import { useState, createContext, useContext } from "react";
 
 //my Components
 import MoreButton, { PanelOpen } from "./More-Button/More";
+import { Musics } from "../CONSTANTS/constants";
 
 //styles
 import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
@@ -18,7 +19,7 @@ export default function GeneratePage({ myContext }) {
     console.log("suprise me button");
   };
   const GenerateButtonClick = () => {
-    console.log("Generating some music");
+    console.log(Musics[0].Path);
   };
   return (
     <>
