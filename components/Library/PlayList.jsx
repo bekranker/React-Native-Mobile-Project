@@ -10,7 +10,7 @@ import { PlayListStyle } from "../../styles/Pages/Library/PlayListStyle";
 //Others;
 import pp from "../../Assets/pp.jpeg";
 import ListenCountIcon from "../../Assets/ListenCountIcon.png";
-import heart from "../../Assets/Listening Page/Heart.png";
+import heart from "../../Assets/ListeningPage/Heart.png";
 
 export const PlayList = ({ dataOfItem }) => {
   const songPicture = pp; //as an url to img path;

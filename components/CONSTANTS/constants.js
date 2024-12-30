@@ -1,8 +1,12 @@
 //Assets
 import AlbumPP from "../../Assets/pp.jpeg";
-
+import CountryCover from "../../Assets/ListeningPage/Backgrounds/Country.png";
+import JazzCover from "../../Assets/ListeningPage/Backgrounds/Jazz.png";
+import MetalCover from "../../Assets/ListeningPage/Backgrounds/Metal.png";
+import PopCover from "../../Assets/ListeningPage/Backgrounds/Pop.png";
+import RapCover from "../../Assets/ListeningPage/Backgrounds/Rap.png";
+import RockAndRollCover from "../../Assets/ListeningPage/Backgrounds/RockAndRoll.png";
 //Musics
-
 export const profilePicture = AlbumPP;
 export const Category = Object.freeze({
   CREATED_SONGS: "Created Songs",
@@ -35,26 +39,32 @@ export const GENRES = [
 export const Musics = [
   {
     Name: "Country",
-    Path: "/@Musics/Country.mp3",
+    Path: "../../Assets/Musics/Country.mp3",
+    CoverImage: CountryCover,
   },
   {
     Name: "80sPop",
-    Path: "/@Musics/80sPop.mp3",
+    Path: "../../Assets/Musics/80sPop.mp3",
+    CoverImage: PopCover,
   },
   {
     Name: "Jazz",
-    Path: "/@Musics/Jazz.mp3",
+    Path: "../../Assets/Musics/Jazz.mp3",
+    CoverImage: JazzCover,
   },
   {
     Name: "Rock",
-    Rock: "/@Musics/Rock.mp3",
+    Rock: "../../Assets/Musics/Rock.mp3",
+    CoverImage: RockAndRollCover,
   },
   {
     Name: "Metal",
-    Metal: "/@Musics/Metal.mp3",
+    Metal: "../../Assets/Musics/Metal.mp3",
+    CoverImage: MetalCover,
   },
   {
     Name: "HipHop Rap",
-    HipHopRap: "/@Musics/Raphiphop.mp3",
+    HipHopRap: "../../Assets/Musics/Raphiphop.mp3",
+    CoverImage: RapCover,
   },
 ];

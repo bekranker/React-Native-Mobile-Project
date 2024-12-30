@@ -1,7 +1,7 @@
 //build in Components
 import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { useState, createContext, useContext } from "react";
-
+import { Audio } from "expo-av";
 //my Components
 import MoreButton, { PanelOpen } from "./More-Button/More";
 import { Musics } from "../CONSTANTS/constants";
@@ -11,7 +11,7 @@ import { Style } from "../../styles/Pages/GeneratePage/GenerateStyle";
 
 export default function GeneratePage({ myContext }) {
   const context = createContext();
-  const { musicList, setMusicList } = useContext(myContext);
+  const { musicList, setMusicList, setMusicCreated } = useContext(myContext);
   const [CreatingProfile, setCreatingProfile] = useState(false);
   const [inputField, setInputField] = useState("");
 
@@ -19,7 +19,8 @@ export default function GeneratePage({ myContext }) {
     console.log("suprise me button");
   };
   const GenerateButtonClick = () => {
-    console.log(Musics[0].Path);
+    setMusicList((prevList) => [...prevList, Musics.shift()]);
+    setMusicCreated(true);
   };
   return (
     <>

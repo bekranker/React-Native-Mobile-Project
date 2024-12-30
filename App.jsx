@@ -8,7 +8,6 @@ import { MusicPanel } from "./components/MusicListeningPage/MusicBar";
 import { Listen } from "./components/MusicListeningPage/Listen";
 import ProfilePicture from "./components/Profile/ProfilePicture";
 import { LibraryPage } from "./components/Library/LibraryPage";
-import { ProfileWithCircle } from "./components/Profile/ProfileWithCircle";
 /* This Field is for Stylies */
 import { Style } from "./styles/Pages/GeneratePage/GenerateStyle";
 import { ProfilePictureStyle } from "./styles/Pages/Profile/ProfileButton";
@@ -40,6 +39,7 @@ export default function App() {
           setLayer: setLayer,
           musicList: musicList,
           setMusicList: setMusicList,
+          setMusicCreated: setMusicCreated,
         }}
       >
         <Listen myContext={myContext} />

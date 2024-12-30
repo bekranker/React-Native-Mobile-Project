@@ -10,7 +10,7 @@ module.exports = function (api) {
           alias: {
             "@assets": "./Assets", // Assuming "Assets" is in the root directory
             "@components": "./Components", // Assuming "Components" is in the root directory
-            "@styles": "./Styles", // Assuming "Styles" is in the root directory
+            "@Styles": "./Styles", // Assuming "Styles" is in the root directory
             "@Musics": "./Assets/Musics", // If Musics is under Assets
           },
         },

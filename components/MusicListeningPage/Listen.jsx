@@ -1,5 +1,4 @@
-import 
-{
+import {
   Text,
   TouchableOpacity,
   Image,
@@ -16,16 +15,16 @@ import {
   UpperSide,
 } from "../../styles/Pages/Music/BigCurrentListening";
 import { LinearGradient } from "expo-linear-gradient";
-import musicLabelBg from "../../Assets/Listening Page/Backgrounds/popBG.jpeg";
 import AlbumPP from "../../Assets/pp.jpeg";
-import hearth from "../../Assets/Listening Page/Heart.png";
-import previousButton from "../../Assets/Listening Page/Previous.png";
-import nextButton from "../../Assets/Listening Page/Next.png";
-import PlayButton from "../../Assets/Listening Page/playBlack.png";
-import stopButton from "../../Assets/Listening Page/pauseBlack.png";
+import hearth from "../../Assets/ListeningPage/Heart.png";
+import previousButton from "../../Assets/ListeningPage/Previous.png";
+import nextButton from "../../Assets/ListeningPage/Next.png";
+import PlayButton from "../../Assets/ListeningPage/playBlack.png";
+import stopButton from "../../Assets/ListeningPage/pauseBlack.png";
 import closeButton from "../../Assets/closeWhite.png";
-export const Listen = ({myContext}) => {
-  const { vListening, vSetListening, vClose, vSetClose } = useContext(myContext);
+export const Listen = ({ myContext }) => {
+  const { vListening, vSetListening, vClose, vSetClose, musicList } =
+    useContext(myContext);
 
   //zoom animation
   const scaleAnim = useRef(new Animated.Value(1)).current;
@@ -59,7 +58,7 @@ export const Listen = ({myContext}) => {
       <>
         {/* the background conatin bottom and upper elements like exit arrow and music time slider's parents */}
         <Animated.Image
-          source={musicLabelBg}
+          source={musicList[musicList.length - 1].CoverImage}
           style={[
             ListenStyle.BackgrounCoverImage,
             { transform: [{ scale: scaleAnim }] },
@@ -109,7 +108,7 @@ export const Listen = ({myContext}) => {
                   {/* This part is the left part where is the name, creator and pp included */}
                   <View style={Bottom_Upper_Side.LeftEpisode}>
                     <Image
-                      source={musicLabelBg}
+                      source={musicList[musicList.length - 1].CoverImage}
                       style={Bottom_Upper_Side.LeftEpisodePP}
                     />
                     <View style={Bottom_Upper_Side.leftEpisodeTexts}>

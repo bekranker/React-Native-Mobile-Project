@@ -4,11 +4,11 @@ import { useContext } from "react";
 //styles
 import { CurrentListeningStyle } from "../../styles/Pages/Music/CurrentListening";
 //others
-import Tarkan from "../../Assets/pp.jpeg";
-import Playbutton from "../../Assets/Listening Page/Playbutton.png";
-import pause from "../../Assets/Listening Page/pause.png";
+import Playbutton from "../../Assets/ListeningPage/Playbutton.png";
+import pause from "../../Assets/ListeningPage/pause.png";
 export const MusicPanel = ({ myContext }) => {
-  const { vListening, vSetListening, vSetClose } = useContext(myContext);
+  const { vListening, vSetListening, vSetClose, musicList } =
+    useContext(myContext);
 
   return (
     <>
@@ -18,9 +18,14 @@ export const MusicPanel = ({ myContext }) => {
           vSetClose(true);
         }}
       >
-        <Image source={Tarkan} style={CurrentListeningStyle.pp}></Image>
+        <Image
+          source={musicList[musicList.length - 1].CoverImage}
+          style={CurrentListeningStyle.pp}
+        ></Image>
         <View style={CurrentListeningStyle.PanelItem}>
-          <Text style={CurrentListeningStyle.songName}>Love Song</Text>
+          <Text style={CurrentListeningStyle.songName}>
+            {musicList[musicList.length - 1].Name}
+          </Text>
           <Text style={CurrentListeningStyle.songBy}>by Bekir</Text>
         </View>
         <TouchableOpacity
